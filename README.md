@@ -114,12 +114,4 @@ Rules are in [`firestore.rules`](firestore.rules). Deploy them in the Firebase C
 3. Deploy **`firestore.rules`** to your Firestore database.
 4. `flutter run` (or build for release).
 
----
 
-## Tests
-
-The project includes widget tests and unit tests (e.g. identity name generation). Run:
-
-```bash
-flutter test
-```
