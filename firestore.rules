@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Anonymous demo app — tighten for production (auth, rate limits, validation).
+    match /rooms/{roomId} {
+      allow read: if true;
+      allow create, update: if true;
+
+      match /messages/{msgId} {
+        allow read, create: if true;
+        allow update, delete: if false;
+      }
+
+      match /members/{memberId} {
+        allow read, create: if true;
+        allow update, delete: if false;
+      }
+    }
+  }
+}
